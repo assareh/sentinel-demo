@@ -36,5 +36,3 @@ policy "restrict-app-service-to-https" {
     source = "./restrict-app-service-to-https.sentinel"
     enforcement_level = "hard-mandatory"
 }
-
-####### paste in AWS and GCP policies
