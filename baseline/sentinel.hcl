@@ -33,6 +33,6 @@ policy "restrict-vm-size" {
 }
 
 policy "restrict-app-service-to-https" {
-    source = "./restrict-app-service-to-https.sentinel"
+    source = "../azure/restrict-app-service-to-https.sentinel"
     enforcement_level = "hard-mandatory"
 }
