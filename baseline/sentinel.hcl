@@ -10,14 +10,24 @@ module "tfconfig-functions" {
     source = "../common-functions/tfconfig-functions/tfconfig-functions.sentinel"
 }
 
+module "aws-functions" {
+    source = "../aws/aws-functions/aws-functions.sentinel"
+}
+
 module "azure-functions" {
     source = "../azure/azure-functions/azure-functions.sentinel"
 }
 
-# cloud agnostic
+####### cloud agnostic
 policy "validate-variables-have-descriptions" {
     source = "./validate-variables-have-descriptions.sentinel"
     enforcement_level = "advisory"
+}
+
+####### aws
+policy "restrict-s3-bucket-policies" {
+  source = "../aws/restrict-s3-bucket-policies.sentinel"
+  enforcement_level = "hard-mandatory"
 }
 
 ####### azure
