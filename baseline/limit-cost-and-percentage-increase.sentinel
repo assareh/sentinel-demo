@@ -15,7 +15,7 @@ param cost_max_percent default 100
 
 # Call the validation function
 # Warnings will be printed for violations
-cost_validated = run.limit_cost_and_percentage_increase(limit, max_percent)
+cost_validated = run.limit_cost_and_percentage_increase(cost_monthly_limit, cost_max_percent)
 
 # Main rule
 main = rule {
