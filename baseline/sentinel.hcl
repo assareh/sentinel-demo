@@ -19,6 +19,11 @@ module "azure-functions" {
 }
 
 ####### cloud agnostic
+policy "limit-cost-and-percentage-increase" {
+    source = "./limit-cost-and-percentage-increase.sentinel"
+    enforcement_level = "soft-mandatory"
+}
+
 policy "validate-variables-have-descriptions" {
     source = "./validate-variables-have-descriptions.sentinel"
     enforcement_level = "advisory"
